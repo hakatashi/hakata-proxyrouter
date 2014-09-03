@@ -29,7 +29,7 @@ app.use(proxyRouter);
 app.use(express.static('static'));
 
 app.get('/', function (req, res) {
-	res.send('It works!');
+	res.send('Router works!');
 });
 
 var server = app.listen(config.port, function() {

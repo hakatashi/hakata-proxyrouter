@@ -1,0 +1,26 @@
+{
+  "name": "hakata-proxyrouter",
+  "version": "1.0.0",
+  "description": "Automatically route much processes",
+  "main": "hakata-proxyrouter.js",
+  "dependencies": {
+    "express": "^4.8.7",
+    "http-proxy": "^1.3.0",
+    "morgan": "^1.3.0",
+    "sugar": "^1.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hakatashi/hakata-proxyrouter.git"
+  },
+  "author": "hakatashi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hakatashi/hakata-proxyrouter/issues"
+  },
+  "homepage": "https://github.com/hakatashi/hakata-proxyrouter"
+}

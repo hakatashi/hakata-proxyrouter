@@ -44,6 +44,8 @@ var proxyRouter = function (req, res, next) {
 	if (route.type === 'proxy') {
 		proxy.web(req, res, {
 			target: route.target,
+		}, function (error) {
+			next(error);
 		});
 	} else if (route.type === 'static') {
 		express.static(route.target, route.options)(req, res, next)
@@ -54,10 +56,18 @@ var proxyRouter = function (req, res, next) {
 
 app.use(morgan('combined'));
 app.use(proxyRouter);
+
 // not found
 app.use(function (req, res) {
 	res.status(404);
 	res.send('Requested URL ' + req.originalUrl + ' is not found among hakata-proxyrouter sorry ;(');
+});
+
+// error
+app.use(function (err, req, res, next) {
+	console.error(err.stack);
+	res.status(500);
+	res.send('Destination of hakata-proxyrouter seems to be down now. Please report this error to me anyway...');
 });
 
 var server = app.listen(config.listen, function() {

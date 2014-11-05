@@ -54,7 +54,7 @@ var proxyRouter = function (req, res, next) {
 	}
 };
 
-app.use(morgan('combined'));
+app.use(morgan(':remote-addr - :remote-user [:date] ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent" ":req[Host]"'));
 app.use(proxyRouter);
 
 // not found

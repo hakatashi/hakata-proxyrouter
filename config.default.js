@@ -29,6 +29,12 @@ module.exports = {
 				target: 'http://localhost:10725'
 			},
 		},
+		'example.org': {
+			'/': {
+				type: 'redirect',
+				target: 'http://www.google.com/'
+			},
+		},
 		'_any': {
 			'/': {
 				type: 'static',

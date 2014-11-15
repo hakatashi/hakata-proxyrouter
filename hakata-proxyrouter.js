@@ -50,9 +50,7 @@ var proxyRouter = function (req, res, next) {
 	} else if (route.type === 'static') {
 		express.static(route.target, route.options)(req, res, next)
 	} else if (route.type === 'redirect') {
-		res.status(302);
-		res.header('Location', route.target);
-		res.send('<h1>I think what you want is located <a href="' + route.target + '">here</a>...</h1>');
+		res.redirect(route.target);
 	} else {
 		return next();
 	}

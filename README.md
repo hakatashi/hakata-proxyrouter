@@ -1,6 +1,8 @@
 hakata-proxyrouter
 ==================
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/hakatashi/hakata-proxyrouter.svg)](https://greenkeeper.io/)
+
 Listen to request and route it into static directory or HTTP proxies.
 
 # Install
